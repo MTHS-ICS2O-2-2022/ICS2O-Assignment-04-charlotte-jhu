@@ -1,57 +1,86 @@
 <!DOCTYPE html>
-<!-- ICS2O-Unit1-08-Template-->
+<!-- ICS2O-Assignment-4-->
 <html lang="en-ca">
   <head>
     <meta charset="utf-8" />
-    <meta name="description" content="ICS2O Template" />
+    <meta name="description" content="Bracelet Store Prices" />
     <meta name="keywords" content="mths, ics2o" />
     <meta name="author" content="Charlotte Jhu" />
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link
-      rel="stylesheet"
-      href="https://code.getmdl.io/1.3.0/material.teal-deep_purple.min.css"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-deep_purple.min.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
     <link rel="manifest" href="./site.webmanifest" />
-    <title>ICS2O Template</title>
+    <title>Bracelet Store Prices</title>
   </head>
   <body>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="./js/script.js"></script>
-      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">ICS2O Template</span>
+          <span class="mdl-layout-title">Bracelet Store Prices</span>
         </div>
       </header>
       <main class="mdl-layout__content">
         <div id="image">
-          <img
-          class="right-image"
-          src="./images/octocat-1675361557391.png" 
-          alt="Octocat" width="30%" height="auto"
-          />
+          <img class="right-image" src="./images/friendship-bracelets.webp" alt="Bracelets"/>
         </div>
         <div class="page-content-instructions">
-          <div id="instructions">Insert instructions here</div>
+          <div id="instructions">Enter desired length and number of colours:</div>
+          <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
+            <thead>
+              <tr>
+                <th class="mdl-data-table__cell--non-numeric">Length</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">5 inches</td>
+                <td>$4.00</td>
+              </tr>
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">6 inches</td>
+                <td>$4.50</td>
+              </tr>
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">7 inches</td>
+                <td>$5.00</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
+            <thead>
+              <tr>
+                <th class="mdl-data-table__cell--non-numeric">Number of Colours</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">1 colour</td>
+                <td>$0.50</td>
+              </tr>
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">2 colours</td>
+                <td>$1.00</td>
+              </tr>
+              <tr>
+                <td class="mdl-data-table__cell--non-numeric">3 colours</td>
+                <td>$2.00</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <!-- Numeric Textfield -->
         <form action="#">
           <div class="mdl-textfield mdl-js-textfield">
             <!--input pattern attribute-->
-            <input
-              class="mdl-textfield__input"
-              type="text"
-              pattern="-?[0-9]*(\.[0-9]+)?"
-              id="sample2"
-            />
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2" />
             <!--mdl-textfielf__label-->
             <label class="mdl-textfield__label" for="sample2">Number...</label>
             <!--class "mdl-textfield__error"-->
@@ -60,10 +89,8 @@
         </form>
         <br />
         <!-- Accent-colored raised button with ripple -->
-        <button
-          class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-          onclick="myButtonClicked()"
-        >
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          onclick="myButtonClicked()">
           Calculate
         </button>
         <br />
