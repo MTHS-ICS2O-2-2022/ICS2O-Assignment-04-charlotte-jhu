@@ -13,22 +13,25 @@ func main() {
 	// variables
 	var braceletLength float64
 	var numberOfColors float64
+	var subtotal float64
+	var tax float64
+	var total float64
 
 	// input
 	fmt.Println("Welcome to the bracelet store!")
 	fmt.Println("Please enter the length of your bracelet (5, 6 or 7 inches): ")
 	fmt.Scanln(&braceletLength)
 
-	// process and output
+	// process
 	if braceletLength == 5 {
 		fmt.Println("Please enter the number of colours (1-3): ")
 		fmt.Scanln(&numberOfColors)
 		if numberOfColors == 1 {
-			fmt.Println("Your bracelet costs $4.50")
+			subtotal = 4.50
 		} else if numberOfColors == 2 {
-			fmt.Println("Your bracelet costs $5.00")
+			subtotal = 5.00
 		} else if numberOfColors == 3 {
-			fmt.Println("Your bracelet costs $6.00")
+			subtotal = 6.00
 		} else {
 			fmt.Println("Invalid input")
 		}
@@ -37,11 +40,11 @@ func main() {
 		fmt.Println("Please enter the number of colours (1-3): ")
 		fmt.Scanln(&numberOfColors)
 		if numberOfColors == 1 {
-			fmt.Println("Your bracelet costs $5.00")
+			subtotal = 5.00
 		} else if numberOfColors == 2 {
-			fmt.Println("Your bracelet costs $5.50")
+			subtotal = 5.50
 		} else if numberOfColors == 3 {
-			fmt.Println("Your bracelet costs $6.50")
+			subtotal = 6.50
 		} else {
 			fmt.Println("Invalid input")
 		}
@@ -50,15 +53,27 @@ func main() {
 		fmt.Println("Please enter the number of colours (1-3): ")
 		fmt.Scanln(&numberOfColors)
 		if numberOfColors == 1 {
-			fmt.Println("Your bracelet costs $5.50")
+		subtotal = 5.50
 		} else if numberOfColors == 2 {
-			fmt.Println("Your bracelet costs $6.00")
+			subtotal = 6.00
 		} else if numberOfColors == 3 {
-			fmt.Println("Your bracelet costs $7.00")
+			subtotal = 7.00
 		} else {
 			fmt.Println("Invalid input")
 		}
 	}
+	if subtotal >= 6.00 {
+		fmt.Println("Thank you for your purchase, you get a 10% discount next time!")
+	}
 
+	// output
+	roundedSubtotal := fmt.Sprintf("%.2f", subtotal)
+	fmt.Println("Subtotal: $",roundedSubtotal)
+	tax = subtotal * 0.13
+	roundedTax := fmt.Sprintf("%.2f", tax)
+	fmt.Println("Tax: $",roundedTax)
+	total = subtotal + tax
+	roundedTotal := fmt.Sprintf("%.2f", total)
+	fmt.Println("Total: $",roundedTotal)
 	fmt.Println("\nDone.")
 }
