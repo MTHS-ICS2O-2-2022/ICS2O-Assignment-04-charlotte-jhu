@@ -7,35 +7,33 @@
 'use strict'
 
 function myButtonClicked() {
+  // This function calculates the price of a bracelet
   const TAX = 0.13
   let lengthCost = 0.00
-  let colourCost = 0.00
+  let colorCost = 0.00
 
   // input
-  const braceletLength = parseFloat(document.getElementById("bracelet-length").value)
-  const numberOfColours = parseFloat(document.getElementById("number-of-colours").value)
+  const braceletLength = document.getElementById("bracelet-length").value
+  const numberOfColors = document.getElementById("number-of-colors").value
 
   // process
   if (braceletLength == "5 inches") {
     lengthCost = 4.00
   } else if (braceletLength == "6 inches") {
-    //
+    lengthCost = 4.50
   } else if (braceletLength == "7 inches") {
-    //
+    lengthCost = 5.00
   }
 
-  if (numberOfColours == "1 colour") {
-    colourCost = 0.50
-  } else if (numberOfColours == "2 colours") {
-    //
-  } else if (numberOfColours == "3 colours") {
-    //
+  if (numberOfColors == "1 colour") {
+    colorCost = 0.50
+  } else if (numberOfColors == "2 colours") {
+    colorCost = 1.00
+  } else if (numberOfColors == "3 colours") {
+    colorCost = 2.00
   }
 
-
-  let subtotal = lengthCost + colourCost
-
-
+  let subtotal = lengthCost + colorCost
 
   
   if (subtotal >= 6) {
