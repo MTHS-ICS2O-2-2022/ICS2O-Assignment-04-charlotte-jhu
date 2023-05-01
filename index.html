@@ -8,6 +8,7 @@
     <meta name="author" content="Charlotte Jhu" />
     <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/getmdl-select.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-deep_purple.min.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
@@ -19,6 +20,7 @@
   <body>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/getmdl-select.min.js"></script>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
@@ -31,62 +33,77 @@
         </div>
         <div class="page-content-instructions">
           <div id="instructions">Enter desired length and number of colours:</div>
-          <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
-            <thead>
-              <tr>
-                <th class="mdl-data-table__cell--non-numeric">Length</th>
-                <th>Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">5 inches</td>
-                <td>$4.00</td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">6 inches</td>
-                <td>$4.50</td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">7 inches</td>
-                <td>$5.00</td>
-              </tr>
-            </tbody>
-          </table>
-          <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable">
-            <thead>
-              <tr>
-                <th class="mdl-data-table__cell--non-numeric">Number of Colours</th>
-                <th>Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">1 colour</td>
-                <td>$0.50</td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">2 colours</td>
-                <td>$1.00</td>
-              </tr>
-              <tr>
-                <td class="mdl-data-table__cell--non-numeric">3 colours</td>
-                <td>$2.00</td>
-              </tr>
-            </tbody>
-          </table>
+          <br />
+            <table class="mdl-data-table mdl-js-data-table">
+              <thead>
+                <tr>
+                  <th class="mdl-data-table__cell--non-numeric">Length</th>
+                  <th>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="mdl-data-table__cell--non-numeric">5 inches</td>
+                  <td>$4.00</td>
+                </tr>
+                <tr>
+                  <td class="mdl-data-table__cell--non-numeric">6 inches</td>
+                  <td>$4.50</td>
+                </tr>
+                <tr>
+                  <td class="mdl-data-table__cell--non-numeric">7 inches</td>
+                  <td>$5.00</td>
+                </tr>
+              </tbody>
+            </table>
+        <br />
+        <table class="mdl-data-table mdl-js-data-table">
+          <thead>
+            <tr>
+              <th class="mdl-data-table__cell--non-numeric">Number of Colours</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric">1 colour</td>
+              <td>+ $0.50</td>
+            </tr>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric">2 colours</td>
+              <td>+ $1.00</td>
+            </tr>
+            <tr>
+              <td class="mdl-data-table__cell--non-numeric">3 colours</td>
+              <td>+ $2.00</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Select with floating label and arrow -->
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+          <input type="text" value="" class="mdl-textfield__input" id="bracelet-length" readonly>
+          <input type="hidden" value="" name="bracelet-length">
+          <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+          <label for="bracelet-length" class="mdl-textfield__label">Length</label>
+          <ul for="bracelet-length" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+            <li class="mdl-menu__item" data-val="4.00">5 inches</li>
+            <li class="mdl-menu__item" data-val="4.50">6 inches</li>
+            <li class="mdl-menu__item" data-val="5.00">7 inches</li>
+          </ul>
         </div>
-        <!-- Numeric Textfield -->
-        <form action="#">
-          <div class="mdl-textfield mdl-js-textfield">
-            <!--input pattern attribute-->
-            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2" />
-            <!--mdl-textfielf__label-->
-            <label class="mdl-textfield__label" for="sample2">Number...</label>
-            <!--class "mdl-textfield__error"-->
-            <span class="mdl-textfield__error">Input is not a number!</span>
-          </div>
-        </form>
+        <br />
+        <!-- Select with floating label and arrow -->
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select">
+          <input type="text" value="" class="mdl-textfield__input" id="number-of-colours" readonly>
+          <input type="hidden" value="" name="number-of-colours">
+          <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+          <label for="number-of-colours" class="mdl-textfield__label">Number of Colours</label>
+          <ul for="number-of-colours" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+            <li class="mdl-menu__item" data-val="0.50">1 colour</li>
+            <li class="mdl-menu__item" data-val="1.00">2 colours</li>
+            <li class="mdl-menu__item" data-val="2.00">3 colours</li>
+          </ul>
+        </div>
         <br />
         <!-- Accent-colored raised button with ripple -->
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
@@ -96,7 +113,10 @@
         <br />
         <br />
         <div class="page-content-answer">
-          <div id="answer">Insert answer here</div>
+          <div id="price"></div>
+          <br />
+          <div id="special-message"></div>
+          <br />
         </div>
       </main>
     </div>
